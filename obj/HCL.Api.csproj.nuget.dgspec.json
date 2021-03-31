@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\HCL\\HCL.Api\\HCL.Api\\HCL.Api.csproj": {}
+    "D:\\HCL\\HCL.Api\\HCL.Api.csproj": {}
   },
   "projects": {
-    "D:\\HCL\\HCL.Api\\HCL.Api\\HCL.Api.csproj": {
+    "D:\\HCL\\HCL.Api\\HCL.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HCL\\HCL.Api\\HCL.Api\\HCL.Api.csproj",
+        "projectUniqueName": "D:\\HCL\\HCL.Api\\HCL.Api.csproj",
         "projectName": "HCL.Api",
-        "projectPath": "D:\\HCL\\HCL.Api\\HCL.Api\\HCL.Api.csproj",
+        "projectPath": "D:\\HCL\\HCL.Api\\HCL.Api.csproj",
         "packagesPath": "C:\\Users\\karth\\.nuget\\packages\\",
-        "outputPath": "D:\\HCL\\HCL.Api\\HCL.Api\\obj\\",
+        "outputPath": "D:\\HCL\\HCL.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\karth\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,32 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.78, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
