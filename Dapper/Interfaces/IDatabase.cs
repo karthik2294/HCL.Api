@@ -9,6 +9,7 @@ namespace HCL.Api.Dapper
     public interface IDatabase
     {
         Task<IList<T>> ExecuteList<T>(string commandText);
+        Task<T> Execute<T>(string commandText, List<Tuple<string, object>> lstParams = null);
 
     }
 

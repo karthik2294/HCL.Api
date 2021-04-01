@@ -9,5 +9,6 @@ namespace HCL.Api.Repository.Interfaces
     public interface IContactRepository
     {
         Task<IEnumerable<Contact>> GetContacts();
+        Task<Contact> GetContact(int employeeId);
     }
 }

@@ -20,14 +20,13 @@ namespace HCL.Api.Controllers
     public class ContactController : Controller
     {
 
-        private readonly IContactService contactService;
+        private readonly IContactService ContactService;
         private readonly IConfiguration Configuration;
 
         public ContactController(IConfiguration Configuration)
         {
             this.Configuration = Configuration;
-            //TODO Move the initialization to IOC controller unity or autofac
-            this.contactService = new Service.Implementations.ContactService(new Repository.Implemenations.ContactRepository(new Dapper.Database(this.Configuration)));
+            this.ContactService = new Service.Implementations.ContactService(new Repository.Implemenations.ContactRepository(new Dapper.Database(this.Configuration)));
         }
 
 
@@ -36,8 +35,16 @@ namespace HCL.Api.Controllers
         [ProducesResponseType(typeof(IEnumerable<Contact>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> Get()
         {
-            IEnumerable<Contact> contacts = await this.contactService.GetContacts();
+            IEnumerable<Contact> contacts = await this.ContactService.GetContacts();
             return (IActionResult)this.Ok(contacts);
+        }
+
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(Contact), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> Get(int id)
+        {
+            Contact contact = await this.ContactService.GetContact(id);
+            return (IActionResult)this.Ok(contact);
         }
 
     }

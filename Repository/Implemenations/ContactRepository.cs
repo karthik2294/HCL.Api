@@ -23,5 +23,13 @@ namespace HCL.Api.Repository.Implemenations
             var result = await this.database.ExecuteList<Contact>("[Employee].[uspGetContacts]");
             return await Task.FromResult(result);
         }
+
+        public async Task<Contact> GetContact(int employeeId)
+        {
+            var lstParams = new List<Tuple<string, object>>() { new Tuple<string, object>("EmployeeId", employeeId) };
+
+            var result = await this.database.Execute<Contact>("[Employee].[uspGetContacts]", lstParams);
+            return await Task.FromResult(result);
+        }
     }
 }

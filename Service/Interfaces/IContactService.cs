@@ -8,5 +8,6 @@ namespace HCL.Api.Service.Interfaces
     public interface IContactService
     {
         Task<IEnumerable<Contact>> GetContacts();
+        Task<Contact> GetContact(int employeeId);
     }
 }

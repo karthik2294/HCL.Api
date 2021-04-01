@@ -20,5 +20,10 @@ namespace HCL.Api.Service.Implementations
         {
             return await this.contactRepository.GetContacts();
         }
+
+        public async Task<Contact> GetContact(int employeeId)
+        {
+            return await this.contactRepository.GetContact(employeeId);
+        }
     }
 }
